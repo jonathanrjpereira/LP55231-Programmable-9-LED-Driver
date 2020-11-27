@@ -23,15 +23,13 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "SysClock.h"
-#include "LED.h"
-#include "lp55231.h"
-
 #include "stm32l476xx.h"
 #include <string.h>
 #include <stdio.h>
 #include <time.h>
 #include <stdbool.h>
+
+#include "lp55231.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -42,6 +40,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 #define NEWLINE_STRING "\r\n"
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -57,15 +56,6 @@ UART_HandleTypeDef huart2;
 /* USER CODE BEGIN PV */
 /* Global variables used for loop timing and printing on terminal */
 char g_msg[50];
-
-//const uint8_t LP55231_ADDR = 0x32; // 7-bit I2C Address: ASEL0,ASEL1 = GND
-
-// Control Register Map
-//const uint8_t ENGINE_CNTRL1 = 0x00;
-
-// Bit Definitions
-//uint8_t CHIP_EN = 0x40;
-
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -115,12 +105,17 @@ int main(void)
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
 
-  HAL_StatusTypeDef chip_en_status = LP55231_Chip_Enable();
-  HAL_StatusTypeDef init_status = LP55231_Init();
-  HAL_Delay(1000);
-  HAL_StatusTypeDef op_ctrl_status = OP_Ctrl();
-  HAL_StatusTypeDef dx_pwm_status = Dx_PWM();
-//  uint8_t read_status = Read_MISC();
+//  HAL_StatusTypeDef chip_en_status = LP55231_Chip_Enable();
+//  HAL_StatusTypeDef chip_init_status = LP55231_Init();
+//  HAL_Delay(1000);
+//  HAL_StatusTypeDef op_ctrl_status = OP_Ctrl();
+//  HAL_StatusTypeDef dx_pwm_status = Dx_PWM();
+
+  Reset();
+  Enable();
+//  LP55231_Init();
+//  HAL_Delay(500);
+  LP55231_Init();
 
   /* USER CODE END 2 */
 
@@ -128,10 +123,15 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-//	  sprintf(g_msg, "Distance = %d", g_distance);
-//	  output_string(g_msg, strlen(g_msg));
 	  sprintf(g_msg, "Hello World");
 	  output_string(g_msg, strlen(g_msg));
+	  for(int i=0; i<NumChannels; i++){
+		  for(int j=0; j<255; j=j+5){
+			  SetChannelPWM(i, j);
+			  HAL_Delay(10);
+		  }
+		  SetChannelPWM(i, 0);
+	  }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

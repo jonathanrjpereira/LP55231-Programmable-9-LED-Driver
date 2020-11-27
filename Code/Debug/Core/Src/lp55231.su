@@ -1,4 +1,5 @@
-lp55231.c:18:19:LP55231_Chip_Enable	32	static
-lp55231.c:29:19:LP55231_Init	32	static
-lp55231.c:40:19:OP_Ctrl	32	static
-lp55231.c:51:19:Dx_PWM	32	static
+lp55231.c:40:6:WriteReg	32	static
+lp55231.c:44:6:Reset	32	static
+lp55231.c:49:6:Enable	32	static
+lp55231.c:56:6:LP55231_Init	32	static
+lp55231.c:62:18:SetChannelPWM	40	static

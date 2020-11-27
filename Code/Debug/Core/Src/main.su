@@ -1,4 +1,4 @@
-main.c:90:5:main	24	static
+main.c:80:5:main	24	static
 main.c:146:6:SystemClock_Config	232	static
 main.c:200:13:MX_I2C1_Init	8	static
 main.c:246:13:MX_USART2_UART_Init	8	static
