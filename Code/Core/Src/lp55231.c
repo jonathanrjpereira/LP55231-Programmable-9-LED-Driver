@@ -60,14 +60,35 @@ void LP55231_Init(void){
 }
 
 enum lp_err_code SetChannelPWM(uint8_t channel, uint8_t value){
-  if(channel >= NumChannels)
-  {
+  if(channel >= NumChannels){
     return LP_ERR_INVALID_CHANNEL;
   }
-
   uint8_t reg = (D1_PWM) + channel;
-
-//  WriteReg(REG_D1_PWM + channel, value);
   HAL_I2C_Mem_Write(&hi2c1, (uint16_t)(LP55231_ADDR<<1), reg, 1, &value, 1, 50);
   return LP_ERR_NONE;
+}
+
+void RGB_LED(int LED_Group, int R_PWM, int G_PWM, int B_PWM){
+	int r_channel  = (7 + (1 * (LED_Group - 1))) - 1;
+	int g_channel  = (1 + (2 * (LED_Group - 1))) - 1;
+	int b_channel  = (2 + (2 * (LED_Group - 1))) - 1;
+	SetChannelPWM(r_channel, R_PWM);
+	SetChannelPWM(g_channel, G_PWM);
+	SetChannelPWM(b_channel, B_PWM);
+}
+
+void Google_Blue(int LED_Group){
+	RGB_LED(LED_Group, 10, 15, 244);
+}
+void Google_Red(int LED_Group){
+	RGB_LED(LED_Group, 254, 15, 10);
+}
+void Google_Yellow(int LED_Group){
+	RGB_LED(LED_Group, 244, 160, 0);
+}
+void Google_Green(int LED_Group){
+	RGB_LED(LED_Group, 15, 244, 30);
+}
+void White(int LED_Group){
+	RGB_LED(LED_Group, 254, 254, 254);
 }

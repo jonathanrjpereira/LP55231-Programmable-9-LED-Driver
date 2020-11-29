@@ -91,6 +91,12 @@ void Reset(void);
 void Enable(void);
 void LP55231_Init(void);
 enum lp_err_code SetChannelPWM(uint8_t channel, uint8_t value);
+void RGB_LED(int LED_Group, int R_PWM, int G_PWM, int B_PWM);
+void Google_Blue(int LED_Group);
+void Google_Red(int LED_Group);
+void Google_Yellow(int LED_Group);
+void Google_Green(int LED_Group);
+void White(int LED_Group);
 
 
 
