@@ -30,6 +30,7 @@
 #include <stdbool.h>
 
 #include "lp55231.h"
+#include "recipes.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -105,16 +106,8 @@ int main(void)
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
 
-//  HAL_StatusTypeDef chip_en_status = LP55231_Chip_Enable();
-//  HAL_StatusTypeDef chip_init_status = LP55231_Init();
-//  HAL_Delay(1000);
-//  HAL_StatusTypeDef op_ctrl_status = OP_Ctrl();
-//  HAL_StatusTypeDef dx_pwm_status = Dx_PWM();
-
   Reset();
   Enable();
-//  LP55231_Init();
-//  HAL_Delay(500);
   LP55231_Init();
 
   /* USER CODE END 2 */
@@ -125,13 +118,12 @@ int main(void)
   {
 	  sprintf(g_msg, "Hello World");
 	  output_string(g_msg, strlen(g_msg));
-	  for(int i=0; i<NumChannels; i++){
-		  for(int j=0; j<255; j=j+5){
-			  SetChannelPWM(i, j);
-			  HAL_Delay(10);
-		  }
-		  SetChannelPWM(i, 0);
-	  }
+//	  LED_PWM_Test();
+	  Google_Yellow(1);
+//	  Google_Home_Mini_Search_Animation();
+//	  White(1);
+	  HAL_Delay(1000);
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
