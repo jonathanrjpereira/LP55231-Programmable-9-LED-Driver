@@ -119,10 +119,10 @@ int main(void)
 	  sprintf(g_msg, "Hello World");
 	  output_string(g_msg, strlen(g_msg));
 //	  LED_PWM_Test();
-	  Google_Yellow(1);
-//	  Google_Home_Mini_Search_Animation();
+//	  Google_Yellow(1);
+	  Google_Home_Mini_Search_Animation();
 //	  White(1);
-	  HAL_Delay(1000);
+//	  HAL_Delay(1000);
 
     /* USER CODE END WHILE */
 

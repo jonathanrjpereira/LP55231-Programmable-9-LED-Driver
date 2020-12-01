@@ -3,3 +3,9 @@ lp55231.c:44:6:Reset	32	static
 lp55231.c:49:6:Enable	32	static
 lp55231.c:56:6:LP55231_Init	32	static
 lp55231.c:62:18:SetChannelPWM	40	static
+lp55231.c:71:6:RGB_LED	40	static
+lp55231.c:80:6:Google_Blue	16	static
+lp55231.c:83:6:Google_Red	16	static
+lp55231.c:86:6:Google_Yellow	16	static
+lp55231.c:89:6:Google_Green	16	static
+lp55231.c:92:6:White	16	static

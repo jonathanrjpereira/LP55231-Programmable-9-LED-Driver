@@ -1,4 +1,4 @@
-Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
+Core/Src/recipes.o: ../Core/Src/recipes.c ../Core/Inc/recipes.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h \
  ../Core/Inc/stm32l4xx_hal_conf.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h \
@@ -30,9 +30,9 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h \
  ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h \
- ../Core/Inc/lp55231.h ../Core/Inc/recipes.h ../Core/Inc/lp55231.h
+ ../Core/Inc/lp55231.h
 
-../Core/Inc/main.h:
+../Core/Inc/recipes.h:
 
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:
 
@@ -95,9 +95,5 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h:
 
 ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h:
-
-../Core/Inc/lp55231.h:
-
-../Core/Inc/recipes.h:
 
 ../Core/Inc/lp55231.h:
