@@ -109,6 +109,7 @@ int main(void)
   Reset();
   Enable();
   LP55231_Init();
+  POST();
 
   /* USER CODE END 2 */
 
@@ -116,14 +117,10 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  sprintf(g_msg, "Hello World");
-	  output_string(g_msg, strlen(g_msg));
-//	  LED_PWM_Test();
-//	  Google_Yellow(1);
+	  /* Demo Recipes */
 	  Google_Home_Mini_Search_Animation();
-//	  White(1);
-//	  HAL_Delay(1000);
-
+	  Master_Fader();
+	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

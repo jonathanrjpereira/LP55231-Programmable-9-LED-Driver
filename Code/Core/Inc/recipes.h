@@ -1,7 +1,7 @@
 /*
  * recipes.h
  *
- *  Created on: Nov 27, 2020
+ *  Created on: Nov 20, 2020
  *      Author: Jonathan
  */
 
@@ -13,8 +13,9 @@
 #include "lp55231.h"
 
 
-void LED_PWM_Test(void);
+void POST(void);
 void Google_Home_Mini_Search_Animation(void);
+void Master_Fader(void);
 
 
 #endif /* INC_RECIPES_H_ */
