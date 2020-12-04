@@ -16,3 +16,8 @@
 # Programmable Memory - Lighting Sequences
 
 # Altium PCB Design
+
+# References
+1. [Texas Instruments LP55231 - Datasheet](https://www.ti.com/lit/ds/symlink/lp55231.pdf?ts=1607053477451&ref_url=https%253A%252F%252Fwww.google.com%252F)
+
+[1]: https://www.ti.com/lit/ds/symlink/lp55231.pdf?ts=1607053477451&ref_url=https%253A%252F%252Fwww.google.com%252F "Texas Instruments LP55231 - Datasheet."
