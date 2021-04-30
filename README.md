@@ -44,8 +44,6 @@ The chip has a few internal sensors that can be used for diagnostic purposes to 
 - Depending on the voltage source i.e `VDD`, `Vout` or `INT` that we wish to measure, we can configure the `LED_TEST_CONTROL` bits appropriately. To measure `VDD`, it is configured as `0x10`.
 - We can read the 8-bit value from the `LED_TEST_ADC` register. The voltage can be derived using the formula: `Voltage = (Result * 0.03) - 1.478 V`.
 
-# Programmable Memory - Lighting Sequences
-To be updated
 
 # Test Plan and Results
 ## Power On Self Test (POST)
@@ -60,8 +58,6 @@ A multicolor LED follower sequence is performed to resemble the lighting effects
 
 ## Diagnostics
 Configured channel 7’s brightness to maximum. Printed the diagnostic information such as LED forward voltage, VDD and internal temperature.
-
-# Altium PCB Design
 
 # References
 1. [Texas Instruments LP55231 - Datasheet](https://www.ti.com/lit/ds/symlink/lp55231.pdf?ts=1607053477451&ref_url=https%253A%252F%252Fwww.google.com%252F)
